@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  client:
+    image: nginx
+    depends_on:
+      - app
+    ports:
+        - 127.0.0.1:8090:80
+    volumes:
+        - ./dist:/usr/share/nginx/html
+  app:
+    build:
+      context: ./app
+    container_name: app
+    environment:
+      - SERVER_PORT=8000
+    ports:
+      - 127.0.0.1:8000:8000
+

@@ -1,0 +1,12 @@
+/frontPart/.angular/
+/frontPart/dist/
+/frontPart/node_modules/
+/backPart/target/
+/backPart/.classpath
+/backPart/.project
+/backPart/application_copy.yml
+/backPart/listingFCPE.csv
+/backPart/.idea/
+/backPart/.settings/
+
+/frontPart/package-lock.json

@@ -1,0 +1,22 @@
+body {
+    background-color : rgb(217, 217, 217);
+}
+
+[class*='row'] {
+    margin: 0px;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 5px;
+}
+
+  
+
+
+.bordered {
+    background-color: #9b9b9b;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: small;
+}

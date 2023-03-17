@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-12 ">
+    <div *ngIf="inProgress" class="alert alert-warning">
+      <strong>En cours d'envoi</strong><br>
+      encore {{totalCount - counter}} sur {{totalCount}}
+    </div>
+    <div *ngIf="!inProgress && !serveurDown" class="alert alert-success">
+      <strong>Application disponible pour l'envoi aux {{totalCount}} adresses de la liste</strong><br>
+    </div>
+    <div *ngIf="mailIncomplet" class="alert alert-danger">
+      <strong>L'objet et le corps ne doivent pas être vide</strong><br>
+    </div>
+    <div *ngIf="serveurDown" class="alert alert-danger">
+      <strong>L'application ne fonctionne pas</strong><br>
+      veuillez contacter brice_morel@hotmail.com
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-12 ">
+    <div class="input-group mb-3 input-group-lg">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Objet : </span>
+      </div>
+      <input type="text" [(ngModel)]="subject" class="form-control">
+    </div>
+  </div>
+  <div class="col-sm-12 ">
+
+    <div class="NgxEditor__Wrapper">
+      <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+      <ngx-editor [editor]="editor" [(ngModel)]="html" [disabled]="false" [placeholder]="'Votre message ici...'"></ngx-editor>
+    </div>
+    <button [disabled]="inProgress || serveurDown" type="button" class="btn btn-block" (click)="envoiMail(subject)">
+      Envoyer ce message</button>
+  </div>
+</div>
