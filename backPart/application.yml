@@ -2,8 +2,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: email_gmail
-    password: pass_application
+    username: <username_gmail>
+    password: <api_key>
     properties.mail.smtp:
       ssl.trust: smtp.gmail.com
       auth: true
